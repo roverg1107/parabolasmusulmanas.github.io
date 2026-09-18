@@ -1,0 +1,1031 @@
+/* ==========================================================================
+   PARÁBOLAS MUSULMANAS — Hoja de estilos principal
+   Adaptado de la arquitectura "Parábolas de las Tradiciones"
+   Tradición: musulmana (paleta verde + dorado)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES GLOBALES
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta principal */
+  --color-primario: #1b5e3a;        /* Verde islámico sobrio */
+  --color-secundario: #2e7d5b;      /* Verde medio */
+  --color-acento: #c9a961;          /* Dorado sobrio */
+  --color-fondo: #f7f7f4;           /* Blanco roto cálido */
+  --color-superficie: #ffffff;      /* Blanco puro */
+  --color-borde: #d9d9d9;
+  --color-texto: #2b2b2b;
+  --color-texto-suave: #5a5a5a;
+  --color-exito: #2e7d32;
+  --color-alerta: #b71c1c;
+  --color-destacado: #eef4ef;       /* Verde muy claro para fondos */
+
+  /* Paleta extendida para badges y cajas */
+  --color-coranico: #1b5e3a;
+  --color-hadiz: #1a3a5c;
+  --color-sufi: #c9a961;
+  --color-sapiencial: #b8860b;
+  --color-caja-no: #fdf2f2;
+  --color-caja-si: #eef7f0;
+  --color-caja-texto: #f4f7f4;
+
+  /* Tipografía */
+  --fuente-base: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fuente-titulos: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --fuente-arabe: "Amiri", "Scheherazade New", "Traditional Arabic", "Times New Roman", serif;
+
+  /* Espaciado */
+  --espacio-xs: 0.5rem;
+  --espacio-sm: 1rem;
+  --espacio-md: 1.5rem;
+  --espacio-lg: 2.5rem;
+  --espacio-xl: 4rem;
+
+  /* Layout */
+  --ancho-maximo: 1100px;
+  --radio-borde: 8px;
+  --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --sombra-media: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --transicion: all 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET Y BASE
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fuente-base);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-titulos);
+  margin: 0 0 var(--espacio-sm) 0;
+  line-height: 1.3;
+  color: var(--color-primario);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.15rem; }
+h4 { font-size: 1rem; }
+
+p {
+  margin: 0 0 var(--espacio-sm) 0;
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  transition: var(--transicion);
+}
+
+a:hover {
+  color: var(--color-acento);
+  text-decoration: underline;
+}
+
+ul, ol {
+  margin: 0 0 var(--espacio-sm) 0;
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+cite {
+  display: block;
+  margin-top: var(--espacio-xs);
+  font-style: normal;
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. CONTENEDOR PRINCIPAL
+   -------------------------------------------------------------------------- */
+.contenedor {
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: var(--espacio-lg) var(--espacio-md);
+}
+
+/* --------------------------------------------------------------------------
+   4. HEADER DEL SITIO
+   -------------------------------------------------------------------------- */
+.header-sitio {
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+  color: #ffffff;
+  padding: var(--espacio-lg) var(--espacio-md);
+  text-align: center;
+  box-shadow: var(--sombra-media);
+}
+
+.header-sitio h1 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-bottom: var(--espacio-xs);
+  letter-spacing: 0.5px;
+}
+
+.header-sitio p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  margin: 0;
+  font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   5. FOOTER DEL SITIO
+   -------------------------------------------------------------------------- */
+.footer-sitio {
+  background-color: var(--color-primario);
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: var(--espacio-md);
+  margin-top: var(--espacio-xl);
+  font-size: 0.9rem;
+}
+
+.footer-sitio p {
+  margin: 0.25rem 0;
+}
+
+.footer-sitio a {
+  color: var(--color-acento);
+}
+
+/* --------------------------------------------------------------------------
+   6. NAVEGACIÓN DE REGRESO
+   -------------------------------------------------------------------------- */
+.nav-volver {
+  display: inline-block;
+  margin-bottom: var(--espacio-md);
+  padding: var(--espacio-xs) var(--espacio-sm);
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-borde);
+  font-size: 0.9rem;
+  color: var(--color-primario);
+  transition: var(--transicion);
+}
+
+.nav-volver:hover {
+  background-color: var(--color-destacado);
+  border-color: var(--color-primario);
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. CONTENEDOR DE INFOGRAFÍA / SÍNTESIS
+   -------------------------------------------------------------------------- */
+.infografia,
+.sintesis {
+  background-color: var(--color-superficie);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  padding: var(--espacio-lg);
+  margin-bottom: var(--espacio-lg);
+}
+
+/* --------------------------------------------------------------------------
+   8. ENCABEZADO COMPACTO (título + fuente)
+   -------------------------------------------------------------------------- */
+.encabezado-compacto {
+  text-align: center;
+  padding-bottom: var(--espacio-md);
+  margin-bottom: var(--espacio-md);
+  border-bottom: 2px solid var(--color-acento);
+}
+
+.titulo-principal {
+  font-size: 1.8rem;
+  color: var(--color-primario);
+  margin-bottom: var(--espacio-xs);
+}
+
+.fuente-titulo {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   9. CUERPO A DOBLE COLUMNA (puntos 1-11)
+   -------------------------------------------------------------------------- */
+.infografia-cuerpo {
+  column-count: 2;
+  column-gap: 2.5rem;
+  column-rule: 1px solid var(--color-borde);
+}
+
+.infografia-cuerpo > .punto {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: var(--espacio-md);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* --------------------------------------------------------------------------
+   10. PUNTO (sección individual)
+   -------------------------------------------------------------------------- */
+.punto {
+  margin-bottom: var(--espacio-md);
+}
+
+.punto-titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-xs);
+  font-size: 1rem;
+  color: var(--color-primario);
+  margin-bottom: var(--espacio-xs);
+  border-bottom: 1px solid var(--color-borde);
+  padding-bottom: 0.35rem;
+}
+
+.punto-numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background-color: var(--color-primario);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+/* Punto a ancho completo (12 y 13) */
+.punto-completo {
+  column-span: all;
+  -webkit-column-span: all;
+  margin-top: var(--espacio-lg);
+  padding-top: var(--espacio-md);
+  border-top: 1px solid var(--color-borde);
+}
+
+/* --------------------------------------------------------------------------
+   11. CAJAS DE TEXTO
+   -------------------------------------------------------------------------- */
+.caja-texto {
+  background-color: var(--color-caja-texto);
+  border-left: 4px solid var(--color-primario);
+  padding: var(--espacio-sm);
+  border-radius: 0 var(--radio-borde) var(--radio-borde) 0;
+  font-size: 0.92rem;
+  color: var(--color-texto);
+}
+
+.caja-texto cite {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+/* Caja "Lo que NO enseña" — roja */
+.caja-no-ensena {
+  background-color: var(--color-caja-no);
+  border-left: 4px solid var(--color-alerta);
+  padding: var(--espacio-sm);
+  border-radius: 0 var(--radio-borde) var(--radio-borde) 0;
+}
+
+.caja-no-ensena ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.caja-no-ensena li::marker {
+  color: var(--color-alerta);
+}
+
+/* Caja "Lo que SÍ enseña" — verde */
+.caja-si-ensena {
+  background-color: var(--color-caja-si);
+  border-left: 4px solid var(--color-exito);
+  padding: var(--espacio-sm);
+  border-radius: 0 var(--radio-borde) var(--radio-borde) 0;
+}
+
+.caja-si-ensena ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.caja-si-ensena li::marker {
+  color: var(--color-exito);
+}
+
+/* --------------------------------------------------------------------------
+   12. PALABRAS CLAVE (términos árabes)
+   -------------------------------------------------------------------------- */
+.palabra-clave {
+  background-color: var(--color-destacado);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-xs) var(--espacio-sm);
+  margin-bottom: var(--espacio-xs);
+}
+
+.palabra-arabe {
+  font-family: var(--fuente-arabe);
+  font-size: 1.6rem;
+  direction: rtl;
+  text-align: right;
+  color: var(--color-primario);
+  margin-bottom: 0.15rem;
+  line-height: 1.4;
+}
+
+.transliteracion {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--color-secundario);
+  font-size: 0.9rem;
+  margin-bottom: 0.15rem;
+}
+
+.significado {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+}
+
+/* --------------------------------------------------------------------------
+   13. FRASE RESUMEN (punto 12)
+   -------------------------------------------------------------------------- */
+.frase-resumen {
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+  color: #ffffff;
+  text-align: center;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  padding: var(--espacio-md) var(--espacio-lg);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-media);
+  margin: var(--espacio-sm) 0;
+}
+
+/* --------------------------------------------------------------------------
+   14. TABLAS COMPARATIVAS
+   -------------------------------------------------------------------------- */
+.tabla-comparativa {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--espacio-xs) 0;
+  font-size: 0.88rem;
+}
+
+.tabla-comparativa thead th {
+  background-color: var(--color-primario);
+  color: #ffffff;
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.tabla-comparativa tbody td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--color-borde);
+  vertical-align: top;
+}
+
+.tabla-comparativa tbody tr:nth-child(even) {
+  background-color: var(--color-destacado);
+}
+
+.tabla-comparativa tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------------------------
+   15. LISTAS ESPECIALES
+   -------------------------------------------------------------------------- */
+.lista-criterios,
+.lista-aplicaciones {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.lista-criterios li,
+.lista-aplicaciones li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.lista-criterios li::before {
+  content: "›";
+  position: absolute;
+  left: 0.3rem;
+  color: var(--color-acento);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.lista-aplicaciones li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  color: var(--color-primario);
+  font-size: 0.7rem;
+  top: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   16. PATRONES (síntesis de bloque)
+   -------------------------------------------------------------------------- */
+.patron {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--espacio-sm);
+  align-items: start;
+  padding: var(--espacio-sm);
+  background-color: var(--color-destacado);
+  border-radius: var(--radio-borde);
+  margin-bottom: var(--espacio-sm);
+}
+
+.patron-icono {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.patron-contenido h4 {
+  margin: 0 0 0.25rem 0;
+  color: var(--color-primario);
+  font-size: 1rem;
+}
+
+.patron-contenido p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+/* --------------------------------------------------------------------------
+   17. TARJETAS DE PARÁBOLA (index)
+   -------------------------------------------------------------------------- */
+.tarjeta-parabola {
+  display: block;
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-left: 4px solid var(--color-primario);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-sm);
+  margin-bottom: var(--espacio-xs);
+  transition: var(--transicion);
+  text-decoration: none;
+  color: var(--color-texto);
+}
+
+.tarjeta-parabola:hover {
+  background-color: var(--color-destacado);
+  border-left-color: var(--color-acento);
+  box-shadow: var(--sombra-suave);
+  transform: translateX(3px);
+  text-decoration: none;
+  color: var(--color-texto);
+}
+
+.tarjeta-parabola .titulo {
+  font-weight: 600;
+  color: var(--color-primario);
+  font-size: 0.98rem;
+  margin-bottom: 0.15rem;
+}
+
+.tarjeta-parabola .fuente {
+  font-size: 0.82rem;
+  color: var(--color-texto-suave);
+  font-style: italic;
+  margin-bottom: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   18. BADGES
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.badge-coranico {
+  background-color: var(--color-coranico);
+  color: #ffffff;
+}
+
+.badge-hadiz {
+  background-color: var(--color-hadiz);
+  color: #ffffff;
+}
+
+.badge-sufi {
+  background-color: var(--color-sufi);
+  color: #2b2b2b;
+}
+
+.badge-sapiencial {
+  background-color: var(--color-sapiencial);
+  color: #ffffff;
+}
+
+/* Alias para compatibilidad con la estructura previa */
+.badge-verificable { background-color: var(--color-coranico); color: #ffffff; }
+
+/* --------------------------------------------------------------------------
+   19. INFOGRafÍA VISUAL (punto 13)
+   -------------------------------------------------------------------------- */
+.infografia-visual {
+  background-color: var(--color-destacado);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-md);
+  margin-top: var(--espacio-sm);
+}
+
+.infografia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--espacio-sm);
+  margin-bottom: var(--espacio-md);
+}
+
+.infografia-card {
+  background-color: var(--color-superficie);
+  border-top: 3px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-sm);
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+}
+
+.infografia-card h3 {
+  font-size: 1rem;
+  color: var(--color-primario);
+  margin-bottom: 0.4rem;
+}
+
+.infografia-card p {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+.frase-cierre {
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--color-primario);
+  padding: var(--espacio-sm);
+  border-top: 1px solid var(--color-borde);
+}
+
+.frase-cierre p {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   20. INDEX — SECCIONES ESPECÍFICAS
+   -------------------------------------------------------------------------- */
+.intro-proyecto {
+  background-color: var(--color-superficie);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-lg);
+  margin-bottom: var(--espacio-lg);
+  box-shadow: var(--sombra-suave);
+  text-align: center;
+}
+
+.intro-proyecto p {
+  font-size: 1.05rem;
+  color: var(--color-texto-suave);
+  max-width: 750px;
+  margin: 0 auto var(--espacio-sm);
+}
+
+/* Grid de estadísticas */
+.estadisticas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--espacio-sm);
+  margin-bottom: var(--espacio-lg);
+}
+
+.estadistica {
+  background-color: var(--color-superficie);
+  border-top: 4px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-md);
+  text-align: center;
+  box-shadow: var(--sombra-suave);
+}
+
+.estadistica .numero {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--color-primario);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.estadistica .etiqueta {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Esquema de los 13 puntos */
+.esquema-analisis {
+  background-color: var(--color-superficie);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-lg);
+  margin-bottom: var(--espacio-lg);
+  box-shadow: var(--sombra-suave);
+}
+
+.esquema-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--espacio-sm);
+  margin-top: var(--espacio-md);
+}
+
+.esquema-item {
+  display: flex;
+  gap: var(--espacio-xs);
+  align-items: flex-start;
+  padding: var(--espacio-xs);
+  border-left: 3px solid var(--color-acento);
+  background-color: var(--color-destacado);
+  border-radius: 0 var(--radio-borde) var(--radio-borde) 0;
+}
+
+.esquema-item .num {
+  font-weight: bold;
+  color: var(--color-primario);
+  min-width: 1.5rem;
+}
+
+.esquema-item .texto {
+  font-size: 0.88rem;
+}
+
+/* Bloques temáticos */
+.bloque-tematico {
+  background-color: var(--color-superficie);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-lg);
+  margin-bottom: var(--espacio-lg);
+  box-shadow: var(--sombra-suave);
+}
+
+.bloque-tematico h2 {
+  border-bottom: 2px solid var(--color-acento);
+  padding-bottom: var(--espacio-xs);
+  margin-bottom: var(--espacio-sm);
+}
+
+.bloque-descripcion {
+  font-size: 0.95rem;
+  color: var(--color-texto-suave);
+  margin-bottom: var(--espacio-md);
+}
+
+.bloque-boton {
+  display: inline-block;
+  margin-top: var(--espacio-sm);
+  padding: var(--espacio-xs) var(--espacio-md);
+  background-color: var(--color-primario);
+  color: #ffffff;
+  border-radius: var(--radio-borde);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transicion);
+}
+
+.bloque-boton:hover {
+  background-color: var(--color-acento);
+  color: var(--color-texto);
+  text-decoration: none;
+}
+
+/* Sección destacada (síntesis general) */
+.seccion-destacada {
+  background: linear-gradient(135deg, var(--color-primario) 0%, var(--color-secundario) 100%);
+  color: #ffffff;
+  text-align: center;
+  padding: var(--espacio-xl) var(--espacio-lg);
+  border-radius: var(--radio-borde);
+  margin-bottom: var(--espacio-lg);
+  box-shadow: var(--sombra-media);
+}
+
+.seccion-destacada h2 {
+  color: #ffffff;
+  font-size: 1.6rem;
+  margin-bottom: var(--espacio-sm);
+}
+
+.seccion-destacada p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 650px;
+  margin: 0 auto var(--espacio-md);
+}
+
+.boton-grande {
+  display: inline-block;
+  padding: var(--espacio-sm) var(--espacio-lg);
+  background-color: var(--color-acento);
+  color: #2b2b2b;
+  border-radius: var(--radio-borde);
+  font-weight: bold;
+  font-size: 1.05rem;
+  transition: var(--transicion);
+}
+
+.boton-grande:hover {
+  background-color: #ffffff;
+  color: var(--color-primario);
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}
+
+/* Apéndices */
+.apendices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--espacio-sm);
+  margin-bottom: var(--espacio-lg);
+}
+
+.apendice {
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-top: 3px solid var(--color-acento);
+  border-radius: var(--radio-borde);
+  padding: var(--espacio-md);
+  text-align: center;
+  transition: var(--transicion);
+  text-decoration: none;
+  color: var(--color-texto);
+  display: block;
+}
+
+.apendice:hover {
+  background-color: var(--color-destacado);
+  box-shadow: var(--sombra-suave);
+  text-decoration: none;
+  color: var(--color-texto);
+}
+
+.apendice h3 {
+  color: var(--color-primario);
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.apendice p {
+  font-size: 0.85rem;
+  color: var(--color-texto-suave);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   21. RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .contenedor {
+    padding: var(--espacio-md) var(--espacio-sm);
+  }
+
+  .infografia,
+  .sintesis {
+    padding: var(--espacio-md);
+  }
+
+  .infografia-cuerpo {
+    column-count: 1;
+    column-gap: 0;
+    column-rule: none;
+  }
+
+  .header-sitio h1 {
+    font-size: 1.6rem;
+  }
+
+  .titulo-principal {
+    font-size: 1.4rem;
+  }
+
+  .frase-resumen {
+    font-size: 1rem;
+    padding: var(--espacio-md);
+  }
+
+  .estadistica .numero {
+    font-size: 1.8rem;
+  }
+
+  .esquema-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   22. IMPRESIÓN — 3 hojas carta por infografía
+   -------------------------------------------------------------------------- */
+@media print {
+  @page {
+    size: letter;
+    margin: 1.5cm;
+  }
+
+  body {
+    font-size: 11pt;
+    background: #ffffff;
+    color: #000000;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Ocultar elementos no imprimibles */
+  .header-sitio,
+  .footer-sitio,
+  .nav-volver,
+  .bloque-boton,
+  .boton-grande,
+  .seccion-destacada {
+    display: none !important;
+  }
+
+  .contenedor {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .infografia,
+  .sintesis {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+  }
+
+  .encabezado-compacto {
+    margin-bottom: 0.6cm;
+    padding-bottom: 0.3cm;
+  }
+
+  .titulo-principal {
+    font-size: 14pt;
+  }
+
+  .fuente-titulo {
+    font-size: 9pt;
+  }
+
+  .infografia-cuerpo {
+    column-count: 2;
+    column-gap: 0.8cm;
+    column-rule: 1px solid #cccccc;
+  }
+
+  .infografia-cuerpo > .punto {
+    font-size: 8.5pt;
+    line-height: 1.4;
+    margin-bottom: 0.4cm;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .punto-titulo {
+    font-size: 9.5pt;
+    margin-bottom: 0.15cm;
+    padding-bottom: 0.1cm;
+  }
+
+  .punto-numero {
+    width: 1.2rem;
+    height: 1.2rem;
+    font-size: 7.5pt;
+  }
+
+  .caja-texto,
+  .caja-no-ensena,
+  .caja-si-ensena {
+    padding: 0.25cm 0.35cm;
+    font-size: 8.5pt;
+  }
+
+  .palabra-arabe {
+    font-size: 13pt;
+  }
+
+  .transliteracion {
+    font-size: 8.5pt;
+  }
+
+  .significado {
+    font-size: 7.5pt;
+  }
+
+  .frase-resumen {
+    background: #f0f0f0 !important;
+    color: #000000 !important;
+    font-size: 10.5pt;
+    padding: 0.4cm;
+    box-shadow: none;
+  }
+
+  .tabla-comparativa {
+    font-size: 8pt;
+  }
+
+  .tabla-comparativa thead th {
+    background-color: #e0e0e0 !important;
+    color: #000000 !important;
+  }
+
+  .infografia-visual {
+    background-color: #f5f5f5 !important;
+    padding: 0.4cm;
+  }
+
+  .infografia-card {
+    box-shadow: none;
+    border: 1px solid #cccccc;
+  }
+
+  /* Evitar cortes de página molestos */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  .punto-completo {
+    page-break-before: auto;
+    break-before: auto;
+  }
+
+  /* Forzar blanco y negro legible */
+  a {
+    color: #000000;
+    text-decoration: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   23. UTILIDADES
+   -------------------------------------------------------------------------- */
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+.mt-sm { margin-top: var(--espacio-sm); }
+.mt-md { margin-top: var(--espacio-md); }
+.mt-lg { margin-top: var(--espacio-lg); }
+.mb-sm { margin-bottom: var(--espacio-sm); }
+.mb-md { margin-bottom: var(--espacio-md); }
+.mb-lg { margin-bottom: var(--espacio-lg); }
